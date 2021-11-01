@@ -1,0 +1,7 @@
+# Release Notes
+
+## 0.1.0-SNAPSHOT
+*   added spring boot skeleton project
+
+## 0.2.0-SNAPSHOT
+*   implemeted Command pattern for telegram bot project

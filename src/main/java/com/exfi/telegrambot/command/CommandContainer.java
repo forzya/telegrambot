@@ -14,12 +14,6 @@ public class CommandContainer {
     private final Command unknownCommand;
 
     public CommandContainer(SendBotMessageService sendBotMessageService) {
-//        commands = new HashMap<>();
-//        commands.put(START.getCommandName(), new StartCommand(sendBotMessageService));
-//        commands.put(STOP.getCommandName(), new StopCommand(sendBotMessageService));
-//        commands.put(HELP.getCommandName(), new HelpCommand(sendBotMessageService));
-//        commands.put(NO.getCommandName(), new NoCommand(sendBotMessageService));
-
         commands = ImmutableMap.<String, Command>builder()
                 .put(START.getCommandName(), new StartCommand(sendBotMessageService))
                 .put(STOP.getCommandName(), new StopCommand(sendBotMessageService))

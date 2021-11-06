@@ -3,6 +3,7 @@ package com.exfi.telegrambot.command;
 import com.exfi.telegrambot.bot.ExfiTelegramBot;
 import com.exfi.telegrambot.service.SendBotMessageService;
 import com.exfi.telegrambot.service.SendBotMessageServiceImpl;
+import com.exfi.telegrambot.service.TelegramUserService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -14,6 +15,7 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 abstract class AbstractCommandTest {
 
     protected ExfiTelegramBot exfiTelegramBot = Mockito.mock(ExfiTelegramBot.class);
+    protected TelegramUserService telegramUserService = Mockito.mock(TelegramUserService.class);
     protected SendBotMessageService sendBotMessageService = new SendBotMessageServiceImpl(exfiTelegramBot);
 
     @Test

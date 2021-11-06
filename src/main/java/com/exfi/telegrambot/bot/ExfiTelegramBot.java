@@ -1,7 +1,10 @@
 package com.exfi.telegrambot.bot;
 
 import com.exfi.telegrambot.command.CommandContainer;
+import com.exfi.telegrambot.service.SendBotMessageService;
 import com.exfi.telegrambot.service.SendBotMessageServiceImpl;
+import com.exfi.telegrambot.service.TelegramUserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.bots.TelegramLongPollingBot;
@@ -23,8 +26,9 @@ public class ExfiTelegramBot extends TelegramLongPollingBot {
     @Value("${bot.token}")
     private String token;
 
-    public ExfiTelegramBot() {
-        commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this));
+    @Autowired
+    public ExfiTelegramBot(TelegramUserService telegramUserService) {
+        commandContainer = new CommandContainer(new SendBotMessageServiceImpl(this), telegramUserService);
     }
 
     @Override

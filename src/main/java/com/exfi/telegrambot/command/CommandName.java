@@ -4,6 +4,7 @@ public enum CommandName {
 
     START("/start"),
     STOP("/stop"),
+    STAT("/stat"),
     HELP("/help"),
     NO("/no");
 

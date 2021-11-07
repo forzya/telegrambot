@@ -3,10 +3,12 @@ package com.exfi.telegrambot.service;
 import com.exfi.telegrambot.repository.TelegramUser;
 import com.exfi.telegrambot.repository.TelegramUserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class TelegramUserServiceImpl implements TelegramUserService {
 
     private final TelegramUserRepository telegramUserRepository;

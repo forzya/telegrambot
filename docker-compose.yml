@@ -1,9 +1,9 @@
 version: '3.1'
 
 services:
-  exfi:
-    depends-on:
-      - exfi_db
+  exfi-bot:
+    depends_on:
+      - exfi-db
     build:
       context: .
     environment:
@@ -22,3 +22,5 @@ services:
       MYSQL_ROOT_PASSWORD: 'holapa'
     ports:
       - '3308:3306'
+    expose:
+      - '3306'
